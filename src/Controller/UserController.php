@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class UserController extends AbstractController {
     /**
-    * @Route("/index", name="default_index")
+    * @Route("/index", name="user_index")
     */
     public function index (){
         $userList =array();
@@ -21,6 +21,8 @@ class UserController extends AbstractController {
         $userList[2]['first_name']= 'Sandy';
         $userList[2]['last_name']= 'Ecureuil';
 
+        $userList[3]['first_name']= 'Carlo';
+        $userList[3]['last_name']= 'Tentacule';
         return $this->render("user/user.html.twig",[
             'users_list' => $userList,
             ]);
