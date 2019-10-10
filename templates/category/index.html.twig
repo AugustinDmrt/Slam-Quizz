@@ -21,8 +21,8 @@
                 <td>{{ category.shortname }}</td>
                 <td>{{ category.longname }}</td>
                 <td>
-                    <a   class="btn btn-warning" href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a  class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                    <a   class="btn btn-warning" href="{{ path('category_show', {'id': category.id}) }}"><i class="fas fa-eye"></i>&nbsp;show</a>
+                    <a  class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;edit</a>
                     
                 </td>
             </tr>
@@ -34,5 +34,5 @@
         </tbody>
     </table>
 
-    <a  class="btn btn-warning" href="{{ path('category_new') }}">Create new</a>
+    <a  class="btn btn-warning" href="{{ path('category_new') }}"><i class="fas fa-user-plus"></i>&nbsp;Create new</a>
 {% endblock %}
