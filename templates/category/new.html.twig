@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Category{% endblock %}
+{% block title %}{% trans %}New Category{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
+    <h1>{% trans %}Create new Category{% endtrans %}</h1>
 
     {{ include('category/_form.html.twig') }}
     <br>
 
-    <a class="btn btn-warning" href="{{ path('category_index') }}"><i class="fas fa-arrow-circle-left"></i>&nbsp;back to list</a>
+    <a class="btn btn-warning" href="{{ path('category_index') }}"><i class="fas fa-arrow-circle-left"></i>&nbsp;{% trans %}back to list{% endtrans %}</a>
 {% endblock %}
