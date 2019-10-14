@@ -24,7 +24,7 @@
 
     <a class="btn btn-warning" href="{{ path('category_index') }}"><i class="fas fa-arrow-circle-left"></i>&nbsp;{% trans %}back to list{% endtrans %}</a>
 
-    <a class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;{% trans %}edit{% endtrans %}</a>
+    {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;{% trans %}edit{% endtrans %}</a>{% endif %}
     <br><br>
     {{ include('category/_delete_form.html.twig') }}
     
