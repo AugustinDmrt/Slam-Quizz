@@ -1,15 +1,19 @@
-#Projet Slam-Quizz
+Projet Slam-Quizz
+===
+Initialization
+---
 
-##Initialization
+	`git clone https://github.com/AugustinDmrt/Slam-Quizz.git`
 
-	git clone https://github.com/AugustinDmrt/Slam-Quizz.git
 
-##Instalation
+Instalation
+---
 
-	cd Slam-Quizz
-	composer install
+	`cd Slam-Quizz`
+	`composer install`
 	
-###Examples
+Examples
+----
 
 ![Example of the index page ](assests/screenshot_home.JPG)
 
