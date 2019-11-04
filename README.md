@@ -10,6 +10,7 @@ Instalation
 ---
 
 `cd Slam-Quizz`
+
 `composer install`
 	
 Examples
