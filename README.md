@@ -3,14 +3,14 @@ Projet Slam-Quizz
 Initialization
 ---
 
-	`git clone https://github.com/AugustinDmrt/Slam-Quizz.git`
+`git clone https://github.com/AugustinDmrt/Slam-Quizz.git`
 
 
 Instalation
 ---
 
-	`cd Slam-Quizz`
-	`composer install`
+`cd Slam-Quizz`
+`composer install`
 	
 Examples
 ----
