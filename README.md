@@ -18,6 +18,23 @@ Examples
 
 ![Example of the index page ](assests/screenshot_home.JPG)
 
+Config
+---
+
+'php bin/console server:run'
+
+Open explorer and tapes on url localhost:8000
+
+And the .env rename in .env.local
+
+And search
+
+DATABASE_URL="insert you database url"
+db_user :"Your database users"
+db_password :"Your database password"
+db_name :"Your database name"
+
+
 
 
 	
