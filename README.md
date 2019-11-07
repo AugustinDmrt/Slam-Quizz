@@ -33,6 +33,8 @@ db_password :"Your database password"
 
 db_name :"Your database name"
 
+3.
+
 See the result
 ---
 
