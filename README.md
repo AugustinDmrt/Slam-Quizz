@@ -21,18 +21,24 @@ Examples
 Config
 ---
 
-'php bin/console server:run'
+1.Rename .env in .env.local
 
-Open explorer and tapes on url localhost:8000
-
-And the .env rename in .env.local
-
-And search
+2.Search in .env.locale and replace :
 
 DATABASE_URL="insert you database url"
+
 db_user :"Your database users"
+
 db_password :"Your database password"
+
 db_name :"Your database name"
+
+See the result
+---
+
+`php bin/console server:run`
+
+Open explorer and tapes on url localhost:8000
 
 
 
