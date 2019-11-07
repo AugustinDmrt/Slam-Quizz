@@ -36,16 +36,25 @@ db_password :"Your database password"
 db_name :"Your database name"
 
 3.In src -> DataFixtures -> UserFixtures.php
+
 Change the user as you want 
+
 Exemple : 
+
 $user=new User();
-$user->setEmail("email of the users");        
+
+$user->setEmail("email of the users");   
+
 $user->setPassword('the password of the user');
+
 $user->setRoles(['ROLE_USER']);
+
 $manager->persist($user);
 
 4.In prompt in Slam-Quiz Do
+
 `php bin/console doctrine:fixtures:load`
+
 Enter yes
 
 
