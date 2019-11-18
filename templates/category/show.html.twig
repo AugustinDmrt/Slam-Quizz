@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category{% endblock %}
+{% block title %}{% trans %}Category{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Category</h1>
+    <h1>{% trans %}Category{% endtrans %}</h1>
 
     <table class="table">
         <tbody>
@@ -12,19 +12,19 @@
                 <td>{{ category.id }}</td>
             </tr>
             <tr>
-                <th>Shortname</th>
+                <th>{% trans %}Shortname{% endtrans %}</th>
                 <td>{{ category.shortname }}</td>
             </tr>
             <tr>
-                <th>Longname</th>
+                <th>{% trans %}Longname{% endtrans %}</th>
                 <td>{{ category.longname }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a class="btn btn-warning" href="{{ path('category_index') }}"><i class="fas fa-arrow-circle-left"></i>&nbsp;back to list</a>
+    <a class="btn btn-warning" href="{{ path('category_index') }}"><i class="fas fa-arrow-circle-left"></i>&nbsp;{% trans %}back to list{% endtrans %}</a>
 
-    <a class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;edit</a>
+    {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;{% trans %}edit{% endtrans %}</a>{% endif %}
     <br><br>
     {{ include('category/_delete_form.html.twig') }}
     

@@ -3,7 +3,7 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>{% trans %}Category index{% endtrans %}</h1>
 
     <table class="table">
         <thead>
@@ -21,18 +21,23 @@
                 <td>{{ category.shortname }}</td>
                 <td>{{ category.longname }}</td>
                 <td>
-                    <a   class="btn btn-warning" href="{{ path('category_show', {'id': category.id}) }}"><i class="fas fa-eye"></i>&nbsp;show</a>
-                    <a  class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;edit</a>
+
+                   {% if is_granted('ROLE_USER') %} <a   class="btn btn-warning" href="{{ path('category_show', {'id': category.id}) }}"><i class="fas fa-eye"></i>&nbsp;{% trans %}show{% endtrans %}</a>{% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}<a  class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}"><i class="fas fa-pencil-alt"></i>&nbsp;{% trans %}edit{% endtrans %}</a>{% endif %}
                     
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">{% trans %}no records found{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a  class="btn btn-warning" href="{{ path('category_new') }}"><i class="fas fa-user-plus"></i>&nbsp;Create new</a>
+    {% if is_granted('ROLE_ADMIN') %}<a  class="btn btn-warning" href="{{ path('category_new') }}"><i class="fas fa-user-plus"></i>&nbsp;{% trans %}Create new{% endtrans %}</a>{% endif %}
 {% endblock %}
+
+
+    
+
