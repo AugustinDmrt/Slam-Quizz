@@ -61,6 +61,22 @@ class SecurityControllerTest extends WebTestCase
         $this->assertContains('<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>', $this->client->getResponse()->getContent());
 
     }
+    /**
+     * Verify that the category list is not displayed to users who do not have the admin role
+     */
+    public function testNotShowCategory()
+    {
+        // Request /category 
+        $this->client->request('GET', '/category');
+        $this->assertEquals(301, $this->client->getResponse()->getStatusCode());
 
+        // Asserts that category path move to another path (login)
+        /* 
+        Ecrire ici le code pour vérifier que, si l'utilisateur n'est pas connecté, 
+        la requête '/category' renvoie vers une autre page (la page /login)
+        c'est à dire affirmer que le code de statut de la réponse est égale à 301 (Response::HTTP_MOVED_PERMANENTLY)
+        */
+        
+    }
 
 }
