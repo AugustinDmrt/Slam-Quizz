@@ -43,6 +43,7 @@ class CategoryController extends AbstractController
 
             return $this->redirectToRoute('category_index');
         }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
         return $this->render('category/new.html.twig', [
             'category' => $category,
