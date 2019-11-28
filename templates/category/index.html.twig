@@ -3,7 +3,7 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    {# <h1>{% trans %}Category index{% endtrans %}</h1> #}
+    <h1>{% trans %}Category index{% endtrans %}</h1>
 
     <table class="table">
         <thead>
@@ -29,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                {# <td colspan="4">{% trans %}no records found{% endtrans %}</td> #}
+                <td colspan="4">{% trans %}no records found{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>

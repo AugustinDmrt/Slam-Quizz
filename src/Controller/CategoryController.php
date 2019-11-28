@@ -20,6 +20,8 @@ class CategoryController extends AbstractController
      */
     public function index(CategoryRepository $categoryRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
         return $this->render('category/index.html.twig', [
             'categories' => $categoryRepository->findAll(),
         ]);
@@ -41,6 +43,7 @@ class CategoryController extends AbstractController
 
             return $this->redirectToRoute('category_index');
         }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
         return $this->render('category/new.html.twig', [
             'category' => $category,
