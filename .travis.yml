@@ -4,7 +4,6 @@ php:
 script:
    - composer install
    - composer require --dev symfony/phpunit-bridge
-   - php bin/console doctrine:fixtures:load
-   - y
+   - php bin/console doctrine:fixtures:load -y
    - php bin/phpunit
    
