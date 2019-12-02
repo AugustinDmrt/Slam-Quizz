@@ -1,9 +1,14 @@
 language: php
 php:
-  - '7.3.5'  
+  - '7.3.5'
+services:
+  - mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE myapp_test;'
 script:
-   - composer install
-   - composer require --dev symfony/phpunit-bridge
-   - php bin/console doctrine:fixtures:load -y
-   - php bin/phpunit
+  - composer install
+  - composer require --dev symfony/phpunit-bridge
+  - php bin/console doctrine:fixtures:load 
+  - php bin/phpunit
    
