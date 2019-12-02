@@ -1,4 +1,4 @@
-Projet Slam-Quizz
+Projet Slam-Quizz [![Build Status](https://travis-ci.org/AugustinDmrt/Slam-Quizz.svg?branch=master)](https://travis-ci.org/AugustinDmrt/Slam-Quizz)
 ===
 Initialization
 ---
