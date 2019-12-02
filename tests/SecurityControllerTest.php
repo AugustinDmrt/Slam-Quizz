@@ -106,7 +106,7 @@ class SecurityControllerTest extends WebTestCase
     {
         $this->logIn('user', 'ROLE_USER');
         $this->client->request('GET', '/category/');
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+
 
         
         // Asserts that /category path exists and don't return an error
@@ -114,19 +114,16 @@ class SecurityControllerTest extends WebTestCase
         Ecrire ici le code pour vérifier que, si l'utilisateur est connecté avec le rôle ROLE_USER, 
         la requête '/category' renvoie une réponse HTTP avec un code de statut égale à 200 (Response::HTTP_OK)
         */
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
         
         // Asserts that the response content contains 'Category index' in 'h1' tag
         /* 
         Ecrire ici le code pour vérifier que, si l'utilisateur est connecté avec le rôle ROLE_USER, 
         la requête '/category' renvoie 'Category index' dans la balise 'h1'
-        */
-       
-            $this->assertSelectorTextContains('html h1', 'Category index');
-        
-        
-         $this->client->request('GET', '/category/new');
-         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
+        */   
+        $this->assertSelectorTextContains('html h1', 'Category index');    
+
 
         // Asserts that /category/new path exists and don't return an error
         /* 
@@ -134,6 +131,8 @@ class SecurityControllerTest extends WebTestCase
         la requête '/category/new' affiche que l'accès est interdit
         c'est à dire affirmer que le code de statut de la réponse est égale à 403 (Response::HTTP_FORBIDDEN)
         */
+        $this->client->request('GET', '/category/new');
+        $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
 
     }
      /**
