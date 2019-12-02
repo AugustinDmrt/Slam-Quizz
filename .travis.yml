@@ -3,5 +3,6 @@ php:
   - '7.3.5'  
 script:
    - composer install
+   - composer require symfony/phpunit-bridge
    - php bin/phpunit
    
