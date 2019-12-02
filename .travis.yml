@@ -3,13 +3,16 @@ php:
   - '7.3.5'
 services:
   - postgresql
-before_script:
+
+env:
+  - DATABASE_URL=pgsql://slamquiz:Admin@127.0.0.1:5432/slamquiz
+  before_script:
   - psql -c 'create database slamquiz;' -U postgres
   - psql -c "CREATE USER slamquiz With password 'Admin';" -U postgres
 
 script:
   - composer install
-  - php bin/console doctrine:schema:update --force --env=test 
-  - php bin/console doctrine:fixtures:load -n --env=test
-  # - php bin/phpunit
+  - php bin/console doctrine:schema:update --force 
+  - php bin/console doctrine:fixtures:load -n 
+  - php bin/phpunit
    
