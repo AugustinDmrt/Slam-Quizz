@@ -7,7 +7,7 @@ env:
   - DATABASE_URL="pgsql://$NameUserDatabase:$PasswordDatabase@127.0.0.1:5432/$NameDatabase"
 before_script:
   - psql -c 'create database slamquiz;' -U postgres
-  - psql -c "CREATE USER slamquiz With password 'Admin';" -U postgres
+  - psql -c "CREATE USER $NameUserDatabase With password '$PasswordDatabase';" -U postgres
 
 script:
   - composer install
