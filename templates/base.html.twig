@@ -55,10 +55,11 @@
             {% if app.user %}
             <a class="nav-link text-white"  href="#">{{ app.user.username }}</a>
             <a class="nav-link text-white" href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
+            <a class="nav-link text-white" href="{{ path('answer_index') }}">Answer</a>
             {% endif %}
         </div>
         </nav>
-
+        
         <main role="main" class="container">
 
             <div class="starter-template">                
