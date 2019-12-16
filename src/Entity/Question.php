@@ -41,7 +41,7 @@ class Question
     private $categories;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Answer", mappedBy="question" , cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Answer", mappedBy="question" , cascade={"remove"})
      */
     private $answers;
 
