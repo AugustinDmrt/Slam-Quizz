@@ -23,7 +23,7 @@ class Answer
     private $text;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean", length=255)
      */
     private $correct;
 
@@ -49,12 +49,12 @@ class Answer
         return $this;
     }
 
-    public function getCorrect(): ?string
+    public function getCorrect(): ?bool
     {
         return $this->correct;
     }
 
-    public function setCorrect(string $correct): self
+    public function setCorrect(bool $correct): self
     {
         $this->correct = $correct;
 
