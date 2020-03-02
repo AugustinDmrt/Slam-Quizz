@@ -34,9 +34,15 @@ class Category
      */
     private $questions;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Quizz", mappedBy="categories")
+     */
+    private $quizzs;
+
     public function __construct()
     {
         $this->questions = new ArrayCollection();
+        $this->quizzs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -91,6 +97,37 @@ class Category
         if ($this->questions->contains($question)) {
             $this->questions->removeElement($question);
             $question->removeCategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Quizz[]
+     */
+    public function getQuizzs(): Collection
+    {
+        return $this->quizzs;
+    }
+
+    public function addQuizz(Quizz $quizz): self
+    {
+        if (!$this->quizzs->contains($quizz)) {
+            $this->quizzs[] = $quizz;
+            $quizz->setCategories($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuizz(Quizz $quizz): self
+    {
+        if ($this->quizzs->contains($quizz)) {
+            $this->quizzs->removeElement($quizz);
+            // set the owning side to null (unless already changed)
+            if ($quizz->getCategories() === $this) {
+                $quizz->setCategories(null);
+            }
         }
 
         return $this;
