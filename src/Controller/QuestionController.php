@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
-use App\Entity\Question;
+use DateTime;
 use App\Entity\Answer;
+use App\Entity\Question;
 use App\Form\QuestionType;
 use App\Repository\QuestionRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/question")
@@ -34,6 +35,7 @@ class QuestionController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $question = new Question();
+        $question->setCreatedAt(new DateTime());
 
         if ($nb<2) {
             $nb = 2;
